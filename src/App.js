@@ -31,15 +31,13 @@ class App extends React.Component {
     
       const data = await api_call.json();
     
- 
-      console.log(data);
       this.setState( {
         temperature: data.main.temp,
         city: data.name,
         country: data.sys.country,
         humidity: data.main.humidity,
         description: data.weather[0].description,
-        icon: 'http://openweathermap.org/img/w/'+data.weather[0].icon+'.png',
+        icon: 'https://openweathermap.org/img/w/'+data.weather[0].icon+'.png',
         error: ''
       })
     } else {
